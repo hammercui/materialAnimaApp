@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'android-apt'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 25
@@ -12,6 +15,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        //svg图标生成目录
+        generatedDensities = ['hdpi', 'xhdpi',"xxhdpi"]
         //要想使用java8，必须使用jack编译
 //        jackOptions {
 //            enabled true
@@ -28,6 +33,14 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    //greenDao的配置
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.paicheya.hammer.newtransapp.greenDao'
+        targetGenDir 'src/main/java'
+    }
+
+    //使用java8
 //    compileOptions {
 //        sourceCompatibility JavaVersion.VERSION_1_8
 //        targetCompatibility JavaVersion.VERSION_1_8
@@ -40,10 +53,23 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:cardview-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     testCompile 'junit:junit:4.12'
     //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    //bottom导航
+    compile 'com.roughike:bottom-bar:2.1.1'
+    //---butter knife依赖---
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    //---dagger2依赖---
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    compile 'com.google.dagger:dagger:2.0.2'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //---greenDao3依赖---
+    compile 'org.greenrobot:greendao:3.0.1'
 }
 repositories {
     mavenCentral()

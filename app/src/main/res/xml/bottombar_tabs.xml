@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs >
+    <tab
+        id="@+id/bottomtab_home"
+        icon="@drawable/ic_home_24dp"
+        title="首页" />
+    <tab
+        id="@+id/bottomtab_fliter"
+        icon="@drawable/ic_fliter_24dp"
+        title="分类" />
+    <tab
+        id="@+id/bottomtab_account"
+        icon="@drawable/ic_account_24dp"
+        title="用户中心" />
+</tabs>
