@@ -1,4 +1,4 @@
-package com.paicheya.hammer.newtransapp.greenDao;
+package generator;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

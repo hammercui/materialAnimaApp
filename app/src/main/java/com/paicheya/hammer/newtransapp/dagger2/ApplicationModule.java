@@ -6,9 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.paicheya.hammer.newtransapp.MyApplication;
 import com.paicheya.hammer.newtransapp.dao.SqliteManager;
-import com.paicheya.hammer.newtransapp.greenDao.DaoMaster;
-import com.paicheya.hammer.newtransapp.greenDao.DaoSession;
-import com.paicheya.hammer.newtransapp.greenDao.HMROpenHelper;
+import generator.DaoMaster;
+import generator.DaoSession;
+import generator.SearchHistoryDao;
+import generator.HMROpenHelper;
 
 import javax.inject.Singleton;
 
@@ -40,9 +41,9 @@ public class ApplicationModule {
     @Provides
     public SQLiteDatabase provideSQLiteDatabase(MyApplication application){
         PackageInfo packageInfo = application.getAppInfo();
-        String assetsName = "mFavorite.db";
-        String dbName = "mFavorite.db";
-        String DATABASE_PATH = packageInfo.applicationInfo.dataDir+"/databases";
+        String assetsName = "mFavorite.db"; //资源目录数据库文件名
+        String dbName = "mFavorite.db"; //数据库文件名
+        String DATABASE_PATH = packageInfo.applicationInfo.dataDir+"/databases"; //数据库文件目录
         //拷贝assets的db文件
         SqliteManager manager = new SqliteManager();
         manager.copyAssetsDbToApkDb(application,assetsName,DATABASE_PATH,dbName,true);

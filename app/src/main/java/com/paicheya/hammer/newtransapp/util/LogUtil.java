@@ -10,4 +10,10 @@ public class LogUtil {
     {
         Log.d("Debug",str);
     }
+
+    public static void Http(String paramString)
+    {
+
+        Log.d("http测试", paramString);
+    }
 }

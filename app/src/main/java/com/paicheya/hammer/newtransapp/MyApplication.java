@@ -3,10 +3,17 @@ package com.paicheya.hammer.newtransapp;
 import android.app.Application;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.paicheya.hammer.newtransapp.dagger2.ApplicationComponent;
 import com.paicheya.hammer.newtransapp.dagger2.ApplicationModule;
 import com.paicheya.hammer.newtransapp.dagger2.DaggerApplicationComponent;
+
+
+import javax.inject.Inject;
+
+import generator.DaoMaster;
+import generator.DaoSession;
 
 /**
  * 全局唯一application
@@ -14,6 +21,13 @@ import com.paicheya.hammer.newtransapp.dagger2.DaggerApplicationComponent;
  */
 
 public class MyApplication extends Application {
+    @Inject
+    public DaoMaster daoMaster;
+    @Inject
+    public DaoSession daoSession;
+    @Inject
+    public SQLiteDatabase sqlDB;
+
 
     private static MyApplication instance;
     public static MyApplication getIns(){
