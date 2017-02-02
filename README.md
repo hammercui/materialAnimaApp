@@ -16,6 +16,7 @@
 > 2. retrofit对api请求的封装，使用rxjava的函数式处理，并封装包含缓存的处理
 > 3. retrofit的日志拦截
 > 4. retrofit统一的错误处理
+
 - [ ] 在activity嵌套Fragment，使用BotttomBar+ViewPagger进行导航切换
 - [ ] 自定义toolbar,包含自定义的searchbar
 - [ ] 在toolbar中使用Android5.0新增转场动画
