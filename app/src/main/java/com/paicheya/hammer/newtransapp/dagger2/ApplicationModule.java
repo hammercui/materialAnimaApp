@@ -5,10 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 import com.paicheya.hammer.newtransapp.MyApplication;
-import com.paicheya.hammer.newtransapp.dao.SqliteManager;
+import com.paicheya.hammer.newtransapp.core.SqliteManager;
 import generator.DaoMaster;
 import generator.DaoSession;
-import generator.SearchHistoryDao;
 import generator.HMROpenHelper;
 
 import javax.inject.Singleton;

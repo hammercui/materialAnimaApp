@@ -1,4 +1,4 @@
-package com.paicheya.hammer.newtransapp.dao;
+package com.paicheya.hammer.newtransapp.core;
 
 import android.content.Context;
 

@@ -13,13 +13,24 @@
 >> *  4xx 客户端错误，网络异常
 >> *  5xx 服务端错误，弹出提示，特殊情况提供操作码
 >
-> 2. retrofit对api请求的封装，封装包含缓存的处理
+> 2. retrofit对api请求的封装，使用rxjava的函数式处理，并封装包含缓存的处理
 > 3. retrofit的日志拦截
-
+> 4. retrofit统一的错误处理
+- [ ] 在activity嵌套Fragment，使用BotttomBar+ViewPagger进行导航切换
 - [ ] 自定义toolbar,包含自定义的searchbar
 - [ ] 在toolbar中使用Android5.0新增转场动画
 - [ ] 试验bottomBar切换Fragment，Fragment包含AppBarLayout
 - [ ] 试验Fragment，Fragment包含滚屏操作，背景是图片，
+
+### retrofit2统一的错误处理
+
+1. 新建抽象类`ResultSubscribe<T>`类，继承自Subscribe<T>类，在里面处理
+`onComplete(),onErroe(),onNext()`操作
+2. `Observable`的`subscribe`处理对象使用自定义的`ResultSubscribe`取代`Subscribe`
+
+
+
+
 
 
 
